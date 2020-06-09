@@ -1,4 +1,4 @@
-Nittany Path (PHASE 2 Progress Review)
+Nittany Path 
 ===
 Course management system
 ---
