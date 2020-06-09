@@ -1,0 +1,88 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Grade Assignments
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class="active"><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+<div class="container">
+    <h1>{%if type == 1%}Exam{%endif%}{%if type == 2%}Assignment{%endif%}  Grades</h1>
+    <div class="row">
+        <div class="col">
+            <div class="container card">
+            <table style="width: 100%;">
+            <tr>
+                <th>
+                    Student ID
+                </th>
+                <th style="text-align: center;">
+                    Student Name
+                </th>
+                <th style="text-align: right;">
+                    Grade
+                </th>
+                <th>
+                </th>
+            </tr>
+            {%for entry in data%}
+                <tr>
+                    {%if type == 1%}
+                    <form class="form" method="POST" action={{url_for('updateExamGrade', examID = entry[3])}}>
+                    <td>
+                        <input type="text" name="SID" style="border: 0;" value={{entry[0]}} readonly="true">
+                    </td>
+                    <td align="center">
+                        {{entry[1]}}
+                    </td>
+                    <td align="right">
+                        <input type="text" style="width: max-content; text-align: right;" class="form-control" name="Grade" value={{entry[2]}}>
+                    </td>
+                    <td>
+                        <button class="btn btn-info" type="submit">Update Exam Scores</button>
+                    </td>
+                    </form>
+                    {%endif%}
+                    {%if type == 2%}
+                    <form class="form" method="POST" action={{url_for('updateAssignGrade', assignID = entry[3])}}>
+                    <td>
+                        <input type="text" name="SID" style="border: 0;" value={{entry[0]}} readonly="true">
+                    </td>
+                    <td align="center">
+                        {{entry[1]}}
+                    </td>
+                    <td align="right">
+                        <input type="text" style="width: max-content; text-align: right;" class="form-control" name="Grade" value={{entry[2]}}>
+                    </td>
+                    <td>
+                        <button class="btn btn-info" type="submit">Update Assign Scores</button>
+                    </td>
+                    </form>
+                    {%endif%}
+                </tr>
+            {%endfor%}
+            </table>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+    <br>
+    <div class="container card">
+    <h2>Register New User</h2>
+    <form action="/registerUser" method="POST">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.email) }}
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.confirm) }}
+        <button type="submit" class="btn btn-success">Create User</button>
+    </form>
+    </div>
+{%endblock%}

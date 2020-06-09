@@ -1,0 +1,55 @@
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+{%block navContent%}
+    <li class="active"><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+    <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" align="center">Hello, {{user.Name}}. Welcome to Nittany Path. </h1>
+    <br>
+    <br>
+    <div class="container card">
+    <h4>You can use Nittany Path for the following Tasks</h4>
+    <form action="/action" method="POST">
+        <div class="form-group">
+        <select id="action_select" name="Action" required class="form-control" placeholder="Action">
+            <option value="" disabled selected>Action</option>
+            {%if role == 1%}
+            <option value="checkInfo">Cheking Info</option>
+            {%endif%}
+            {%if role == 2 or role == 1%}
+            <option value="createPosts">Create Posts</option>
+            {%endif%}
+            {%if role == 2%}
+            <option value="createAssign">Create Assignments</option>
+            {%endif%}
+            {%if role == 2 or role == 1%}
+            <option value="submitScores">Submit Scores</option>
+            {%endif%}
+            {%if role == 1%}
+            <option value="dropCourse">Drop Course</option>
+            {%endif%}
+            {%if role == 3%}
+            <option value="addCourse">New Course</option>
+            <option value="addStudent">New Student</option>
+            {%endif%}
+        </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Go!</button>
+    </form>
+    </div>
+{%endblock%}

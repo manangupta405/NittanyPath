@@ -1,0 +1,69 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Select Assignments  
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class="active"><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Assignments</h2><br>
+            <div class="container card">
+                <br>
+                <form class="form" id="assignment_form" method="post" action="/assignments">
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.assignType) }}
+                    {{ wtf.form_field(form.course) }}
+                    <button class="btn btn-success" type="submit">Get Assignments</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {%if type == "1"%}
+            {%for exam in data%}
+                <div class="container card">
+                    <a href={{url_for('enterExamGrades', examId = exam.EXAM_ID)}}>Exam - {{exam.Exam_No}} (Section - {{exam.Section}})</a>
+                </div>
+            {%endfor%}
+            {%endif%}
+            {%if type == "2"%}
+            {%for assignment in data%}
+                <div class="container card">
+                    <a href={{url_for('enterAssignmentGrades', assignId = assignment.ASSIGN_ID)}}>Assignment - {{assignment.Assignment_No}}(Section - {{assignment.Section}})</a>
+                </div>
+            {%endfor%}
+            {%endif%}
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementsByTagName("body")[0].onload = function(){
+        var op = document.getElementById("select_assign_course").getElementsByTagName("option");
+        op[0].disabled = true;
+    };
+    
+</script>
+{%endblock%}

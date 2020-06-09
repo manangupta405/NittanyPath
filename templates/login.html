@@ -1,0 +1,33 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Checking Info   
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="#">Dashboard<span class="sr-only"></span></a></li>
+    <li class="active"><a href="#">Checking Info<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+<div class="container-sm">
+    <br>
+    <div class="card">
+    <div class="card-body">
+        <form class="form-signin" method="POST" action="/login">
+            <h2 class="form-signin-heading">Login</h2>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.email) }}
+            {{ wtf.form_field(form.password) }}
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a class="btn btn-success" href="/" role="button">Go Back</a>
+        </form>
+
+    </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,145 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Checking Info   
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class="active"><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-4">
+        <h2>Personal Info</h2><br>
+        <div class="card" style="padding: 4px; box-shadow: 1px 2px 15px grey;">
+            <div class="card-body">
+                {%if role == 1 %} <h3>Student</h3> {% endif %} {% if role == 2 %} <h3>Professor</h3> {% endif %}<hr>
+                <table style="width: 100%">
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Name :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Name }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Gender :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Gender }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Age :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Age }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Email :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Email }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Phone :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Phone }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Zip :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Zip }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Street :</h4>
+                        </td>
+                        <td style="float: right">
+                            <h4>{{ user.Street }}</h4>
+                        </td>
+                    </tr>
+                    <tr style="width: 100%">
+                        <td>
+                            <h4>Password :</h4>
+                        </td>
+                        <td style="float: right">
+                            <button type="button" class="btn btn-success bg-light text-primary" data-toggle="modal" data-target="#passwordChange">Change Password</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h2>Course Info</h2>
+        {% for course in data %}
+            <br>
+            <div class="card" style="padding: 4px;box-shadow: 1px 2px 15px grey;">
+                <div class="card-body" style="font-size: large;"><strong><u>{{ course["Course"] }}</u> ({{ course["Course Name"] }})</strong> - {{ course['Details'] }}<span  style="float: right"> Offered by {{ course['Department'] }} department.</span></div><hr>
+                {% for prof in course['Professors'] %}
+                    <div class="container">&nbsp Professor : {{ prof['Name'] }} &nbsp|&nbsp {{ prof['Email']}} &nbsp|&nbsp {{ prof['Office'] }}</div><br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Delete Confirmation Dialog Box using Bootstrap Modals-->
+<div class="modal fade" tabindex="-1" role="dialog" id="passwordChange">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4>Confirm!</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form" id="pwd_change_form" action="/checkingInfo" method="POST">
+                {{ form.hidden_tag() }}
+                {{ wtf.form_field(form.password) }}
+                {{ wtf.form_field(form.confirm) }}
+                <button class="btn btn-danger" onclick="submitForm()">Confirm</a>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    function submitForm(){
+        var form = document.getElementById('pwd_change_form');
+        form.submit()
+    }
+</script>
+{%endblock%}

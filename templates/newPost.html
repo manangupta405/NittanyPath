@@ -1,0 +1,74 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+New Post   
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class="active"><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>New Post</h2><br>
+            <div class="container card">
+                <br>
+                <form class="form" id="new_post" method="post" action="/newPost">
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.course) }}
+                    {{ wtf.form_field(form.post) }}
+                    <div align="center">
+                    <button class="btn btn-primary" type="submit">CREATE ASSIGNMENT</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementsByTagName("body")[0].onload = function(){
+        var op = document.getElementById("select_course").getElementsByTagName("option");
+        op[0].disabled = true;
+    };
+    document.getElementById("select_section").onclick = function(){
+        sectionOptions = document.getElementById("select_section").getElementsByTagName("option");
+        course = document.getElementById("select_course").value
+        var optionsAsString = "";
+        for (var i = 0; i < course.length; i++) {
+            if(course[i]=="|"){
+                break;
+            }
+            else{
+                optionsAsString += "<option value='" + course[i] + "'>" + course[i] + "</option>";
+            }
+            removeAll(document.getElementById("select_section"));
+        }
+        function removeAll(selectBox) {
+            for(let option of selectBox.options) {
+                selectBox.remove(0);
+            }
+        }
+
+        $( 'select[id="select_section"]' )  .append(optionsAsString);
+    };
+
+</script>
+{%endblock%}

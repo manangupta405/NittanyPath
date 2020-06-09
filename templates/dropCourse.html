@@ -1,0 +1,71 @@
+
+{% extends "baseLayout.html" %}
+
+{% block title %}
+Checking Info   
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{%block navContent%}
+    <li class=""><a href="{{url_for('dashboard')}}">Dashboard<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class=""><a href="{{url_for('checkingInfo')}}">Checking Info<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('posts')}}">Posts<span class="sr-only">(current)</span></a></li>
+    {%if role == 2%}
+    <li class=""><a href="{{url_for('create_assignment')}}">Create Assignment<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('assignments')}}">Update Scores<span class="sr-only">(current)</span></a></li>
+    {%if role == 1%}
+    <li class="active"><a href="{{url_for('dropCourse')}}">Drop Course<span class="sr-only">(current)</span></a></li>
+    {%endif%}
+    <li class=""><a href="{{url_for('logout')}}">Logout<span class="sr-only">(current)</span></a></li>
+{%endblock%}
+{%block dashBlock%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Drop Course</h2><br>
+            <div class="container card" style="border: 0;">
+                <form class="form" id="drop_form" method="post" action={{url_for('dropCourse', post_id = post_id)}}>
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.course) }}
+                    <div align="center">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm">Delete</button>
+                    </div>
+                </form>
+            </div> 
+        </div>
+    </div>
+    <!-- Delete Confirmation Dialog Box using Bootstrap Modals-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="deleteConfirm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4>Confirm!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to drop the Course?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a class="btn btn-danger text-danger bg-light" onclick="deleteSubmit()">Delete!</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementsByTagName("body")[0].onload = function(){
+        var op = document.getElementById("select_drop_course").getElementsByTagName("option");
+        op[0].disabled = true;
+    };
+    function deleteSubmit(){
+        document.getElementById("drop_form").submit();
+    }
+
+</script>
+{%endblock%}

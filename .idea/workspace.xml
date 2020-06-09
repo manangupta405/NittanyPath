@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc8f0f62-18dd-49cd-846f-9e879584dd6d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Course: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Student: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="nittanypathdb.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="User: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YEdnS7rconO9Iz25d9gqshL5QE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flask server.NittanyPath">
+    <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/NittanyPath/templates/login.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="updateData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NittanyPath" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/updateData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NittanyPath" type="Python.FlaskServer">
+      <module name="NittanyPath" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flask server.NittanyPath" />
+      <item itemvalue="JavaScript Debug.login.html" />
+      <item itemvalue="Python.updateData" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.login.html" />
+        <item itemvalue="Python.updateData" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc8f0f62-18dd-49cd-846f-9e879584dd6d" name="Default Changelist" comment="" />
+      <created>1582511854135</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582511854135</updated>
+      <workItem from="1582511864143" duration="12508000" />
+      <workItem from="1586073261954" duration="60000" />
+      <workItem from="1586179454139" duration="4176000" />
+      <workItem from="1586184358320" duration="13510000" />
+      <workItem from="1587585402369" duration="2105000" />
+      <workItem from="1587667471808" duration="13976000" />
+      <workItem from="1587811721755" duration="256000" />
+      <workItem from="1587819835505" duration="1016000" />
+      <workItem from="1587827708310" duration="1303000" />
+      <workItem from="1587831592974" duration="140000" />
+      <workItem from="1587831826596" duration="5623000" />
+      <workItem from="1587888523751" duration="1068000" />
+      <workItem from="1587892291133" duration="10726000" />
+      <workItem from="1587909021491" duration="586000" />
+      <workItem from="1587918820691" duration="32000" />
+      <workItem from="1587918857706" duration="780000" />
+      <workItem from="1587919718228" duration="9519000" />
+      <workItem from="1588016662373" duration="1130000" />
+      <workItem from="1588027671586" duration="5960000" />
+      <workItem from="1588044879138" duration="9030000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="439" y="189" key="#SQL_Dialects" timestamp="1582517397418">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="439" y="189" key="#SQL_Dialects/0.0.1680.1050@0.0.1680.1050" timestamp="1582517397418" />
+    <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587919180797">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587919180797" />
+    <state x="627" y="288" key="FileChooserDialogImpl" timestamp="1587919299796">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="627" y="288" key="FileChooserDialogImpl/0.0.1680.1050@0.0.1680.1050" timestamp="1587919299796" />
+    <state width="1638" height="294" key="GridCell.Tab.0.bottom" timestamp="1587919641242">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="294" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587919641242" />
+    <state width="1638" height="376" key="GridCell.Tab.0.bottom/0.23.1680.944@0.23.1680.944" timestamp="1587889996600" />
+    <state width="1638" height="294" key="GridCell.Tab.0.center" timestamp="1587919641241">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="294" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587919641241" />
+    <state width="1638" height="376" key="GridCell.Tab.0.center/0.23.1680.944@0.23.1680.944" timestamp="1587889996599" />
+    <state width="1638" height="294" key="GridCell.Tab.0.left" timestamp="1587919641240">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="294" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587919641240" />
+    <state width="1638" height="376" key="GridCell.Tab.0.left/0.23.1680.944@0.23.1680.944" timestamp="1587889996599" />
+    <state width="1638" height="294" key="GridCell.Tab.0.right" timestamp="1587919641241">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="294" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587919641241" />
+    <state width="1638" height="376" key="GridCell.Tab.0.right/0.23.1680.944@0.23.1680.944" timestamp="1587889996600" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1587908715391">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1587908715391" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1587908715390">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1587908715390" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1587908715389">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1587908715389" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1587908715390">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1587908715390" />
+    <state width="239" height="457" key="HiddenNamespacesPopup" timestamp="1582512335700">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="239" height="457" key="HiddenNamespacesPopup/0.0.1680.1050@0.0.1680.1050" timestamp="1582512335700" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1587919306698">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1587919306698" />
+    <state x="733" y="426" width="352" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1588045215839">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="733" y="426" width="352" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1680.1050@0.0.1680.1050" timestamp="1588045215839" />
+    <state x="428" y="188" key="com.intellij.database.dbimport.ImportDialog" timestamp="1588016892659">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="428" y="188" key="com.intellij.database.dbimport.ImportDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588016892659" />
+    <state x="605" y="359" width="471" height="322" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1588098849266">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="605" y="359" width="471" height="322" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588098849266" />
+    <state x="67" y="23" width="1053" height="949" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1588097920333">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="67" y="23" width="1053" height="949" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588097920333" />
+    <state x="517" y="319" key="com.intellij.ide.util.TipDialog" timestamp="1588044879604">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="517" y="319" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588044879604" />
+    <state x="517" y="328" key="com.intellij.ide.util.TipDialog/0.23.1680.944@0.23.1680.944" timestamp="1587819895267" />
+    <state x="517" y="329" key="com.intellij.ide.util.TipDialog/0.23.1680.947@0.23.1680.947" timestamp="1582511868212" />
+    <state x="503" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1587919214804">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="503" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1587919214804" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NittanyPath$NittanyPath.coverage" NAME="NittanyPath Coverage Results" MODIFIED="1587919483498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NittanyPath$updateData.coverage" NAME="updateData Coverage Results" MODIFIED="1586184512542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+  </component>
+</project>
